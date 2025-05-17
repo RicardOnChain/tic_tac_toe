@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system,BlinkMacSystemFont,Trebuchet MS,Roboto,Ubuntu,sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+    background-color: #89B0AE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+dialog{
+    border-radius: 15px;
+    top: -100px;
+    border: none;
+    padding: 30px;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "title title"
+                "playerA inputA"
+                "playerB inputB"
+                "startButton startButton";
+    row-gap: 10px ;
+
+}
+
+.title{
+    grid-area: title;
+    justify-self: center;
+}
+.pA{
+    grid-area: playerA;
+}
+.pB{
+    grid-area: playerB;
+}
+#playerA{
+    grid-area: inputA;
+}
+#playerB{
+    grid-area: inputB;
+}
+
+#startButton, .restartButton{
+    grid-area: startButton;
+    background-color: whitesmoke;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 150px;
+    justify-self: center;
+    margin-top: 10px;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+#startButton:hover, .restartButton:hover{
+    background-color: black;
+    color: white;
+}
+
+.gameboard{
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: black; 
+    gap: 5px;
+
+}
+
+.cell{
+    width: 100px;
+    aspect-ratio: 1/1;
+    background-color: #89B0AE;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    gap: 5px;
+    font-size: 15px;
+    background-color: #FAF9F9;
+}
+
+.github-logo{
+    flex: 0 0 10px;
+    width: 20px;
+}
+
+
+button{
+    background-color: white;
+    border: none;
+
+}
