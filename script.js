@@ -3,17 +3,10 @@ function Gameboard () {
     const squareSide = 3
     const board = []
     
-    const cell = (input) => {
-    
-        if (input == "start"){value = ""}                           //defines the content of each cell
-        else { value = this.token}
-        return value    
-    }
-    
     for (let row=0; row<squareSide; row++){                         // create board based on squareSide size
         board[row]=[]
         for (let column=0; column<squareSide; column++){
-            board[row].push(cell("start"))                                 
+            board[row].push("")                                 
         }
     }
     
@@ -136,7 +129,6 @@ function Flow() {
                 if (!(combo.array.includes(player.getPlayers()[0].token) && combo.array.includes(player.getPlayers()[1].token))){                 // a winner Row only has 1 token type
                     winner = player.getActivePlayer().name                                                                                      // since we run checkEndGame() after every placedToken, the last player who placed a token is the winner when a winner row is generated
                     player.dashboardDiv.innerText=`Player ${winner} has won the game` 
-                    return (console.log("The Game has ended now"))
                 }
             }        
         }
@@ -150,7 +142,7 @@ function Flow() {
     }
     
     
-    return{winner, dropToken, board, player, checkEndGame, createPlayers}
+    return{dropToken, board, player, checkEndGame, createPlayers}
 }
 
 
