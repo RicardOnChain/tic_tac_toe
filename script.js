@@ -129,12 +129,13 @@ function Flow() {
                 if (!(combo.array.includes(player.getPlayers()[0].token) && combo.array.includes(player.getPlayers()[1].token))){                 // a winner Row only has 1 token type
                     winner = player.getActivePlayer().name                                                                                      // since we run checkEndGame() after every placedToken, the last player who placed a token is the winner when a winner row is generated
                     player.dashboardDiv.innerText=`Player ${winner} has won the game` 
+                    return(winner)
                 }
             }        
         }
         
         turns+=1
-        if (turns == 9 & winner == "") {player.dashboardDiv.innerText="It's a tie, play again" }                                                     //it's a tie when 9 turns have been played and the winner variable is still empty.
+        if (turns == 9 && winner == "") {player.dashboardDiv.innerText="It's a tie, play again" }                                                     //it's a tie when 9 turns have been played and the winner variable is still empty.
         
         player.switchTurn()
         
@@ -142,7 +143,7 @@ function Flow() {
     }
     
     
-    return{dropToken, board, player, checkEndGame, createPlayers}
+    return{winner, dropToken, board, player, checkEndGame, createPlayers}
 }
 
 
